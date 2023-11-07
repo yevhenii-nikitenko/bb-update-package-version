@@ -41,7 +41,7 @@ const main = async ({ name, version }, { token, repo_slug, workspace, mainBranch
 
         await bitbucket.repositories.createSrcFileCommit({
             _body: {
-                [fileName]: JSON.stringify(parsedFile, null, 4),
+                [fileName]: JSON.stringify(parsedFile, null, 2),
                 branch: sourceBranch,
                 message: `update ${name} package version to ${version}`,
 
