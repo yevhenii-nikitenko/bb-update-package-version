@@ -5,11 +5,7 @@ install packages:
 ```bash
 npm i
 ```
-Run project:
+Run the app with package name and version pair:
 ```bash
-npm run start package version
-```
-## example:
-```bash
-
+npm run start express 4.18.0
 ```

@@ -1,8 +1,7 @@
 const { Bitbucket } = require('bitbucket');
 require('dotenv').config();
 
-const main = async ({name, version}, { token, repo_slug, workspace, mainBranch }) => {
-    console.log('mainBranch', name, version)
+const main = async ({ name, version }, { token, repo_slug, workspace, mainBranch }) => {
     try {
         if (!name || !version) throw new Error('no name:version pair provided');
 
@@ -49,7 +48,7 @@ const main = async ({name, version}, { token, repo_slug, workspace, mainBranch }
             }, repo_slug, workspace
         });
 
-        // 4 requests are made, maybe possible to reduce the number of calls?
+        // 4 requests are made, maybe is it possible to reduce the number of calls?
         await bitbucket.repositories.createPullRequest({
             _body: {
                 title: `${fileName} update`,
@@ -82,5 +81,5 @@ main({
     token: process.env.BITBUCKET_TOKEN,
     repo_slug: process.env.REPO_SLUG,
     workspace: process.env.WORKSPACE,
-    mainBranch: process.env.SOURCE_BRANCH || 'main'
- })
+    mainBranch: process.env.SOURCE_BRANCH
+})

@@ -1,13 +1,13 @@
 {
   "name": "bb-update-package-version",
   "version": "1.0.0",
-  "description": "",
+  "description": "update some package version of package.json in bitbucket",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "nikitenko",
   "license": "ISC",
   "dependencies": {
     "bitbucket": "^2.11.0",
