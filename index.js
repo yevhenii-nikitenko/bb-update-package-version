@@ -37,7 +37,7 @@ const main = async ({ name, version }, { token, repo_slug, workspace, mainBranch
             parsedFile.devDependencies[name] = version;
         }
 
-        const sourceBranch = `update/${name}/${version}`;
+        const sourceBranch = `update/${name}/${version.replace(/\^|\~/gi, '')}`;
 
         await bitbucket.repositories.createSrcFileCommit({
             _body: {
